@@ -47,7 +47,7 @@ export class ConversationsService {
           },
         });
 
-        newConversation.users.forEach((user) => {
+        newConversation.users.map((user) => {
           if (user.email) {
             this.pusherService.trigger(
               user.email,
@@ -104,6 +104,7 @@ export class ConversationsService {
           users: true,
         },
       });
+
       newConversation.users.map((user) => {
         if (user.email) {
           this.pusherService.trigger(
@@ -113,6 +114,7 @@ export class ConversationsService {
           );
         }
       });
+
       return MSG(
         'Created Single Conversation',
         newConversation,
