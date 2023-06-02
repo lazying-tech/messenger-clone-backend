@@ -9,7 +9,13 @@ import { PusherService } from './pusher/pusher.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [AuthModule, ConversationsModule, MessagesModule, SettingsModule],
+  imports: [
+    ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
+    AuthModule,
+    ConversationsModule,
+    MessagesModule,
+    SettingsModule,
+  ],
   controllers: [AppController],
   providers: [AppService, PusherService],
 })
