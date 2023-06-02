@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { Injectable } from '@nestjs/common';
-import * as Pusher from 'pusher';
+const Pusher = require('pusher');
 
 @Injectable()
 export class PusherService {
-  pusherServer: Pusher;
+  pusherServer: any;
   constructor() {
     this.pusherServer = new (Pusher as any)({
       appId: process.env.PUSHER_APP_ID!,
