@@ -1,6 +1,6 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { MSG } from 'src/message';
-import { PrismaService } from 'src/prisma/prisma.service';
+import { MSG } from '../message';
+import { PrismaService } from '../prisma/prisma.service';
 
 import { UpdateSettingDto } from './dto/update-setting.dto';
 
