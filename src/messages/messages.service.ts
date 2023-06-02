@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { MSG } from 'src/message';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { PusherService } from 'src/pusher/pusher.service';
+import { MSG } from '../message';
+import { PrismaService } from '../prisma/prisma.service';
+import { PusherService } from '../pusher/pusher.service';
 
 import { UpdateMessageDto } from './dto/update-message.dto';
 

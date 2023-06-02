@@ -1,9 +1,9 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { PrismaService } from 'src/prisma/prisma.service';
-import { MSG } from 'src/message';
+import { PrismaService } from '../prisma/prisma.service';
+import { MSG } from '../message';
 
 import { UpdateConversationDto } from './dto/update-conversation.dto';
-import { PusherService } from 'src/pusher/pusher.service';
+import { PusherService } from '../pusher/pusher.service';
 
 @Injectable()
 export class ConversationsService {

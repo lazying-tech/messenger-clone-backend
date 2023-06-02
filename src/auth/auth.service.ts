@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import { MSG } from '../message';
 
-import { PrismaService } from 'src/prisma/prisma.service';
+import { PrismaService } from '../prisma/prisma.service';
 import * as bcrypt from 'bcrypt';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { UpdateAuthDto } from './dto/update-auth.dto';
