@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "env": {
     "DATABASE_URL": "mongodb+srv://giaphao:Hao0903968213@cluster.zo4a24n.mongodb.net/messenger?retryWrites=true&w=majority",
     "NEXT_PUBLIC_PUSHER_APP_KEY": "9634a6662d275c93835a",
