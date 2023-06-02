@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import * as PusherServer from 'pusher';
+import * as Pusher from 'pusher';
 @Injectable()
 export class PusherService {
-  pusherServer: PusherServer;
+  pusherServer: Pusher;
   constructor() {
-    this.pusherServer = new PusherServer({
+    this.pusherServer = new Pusher({
       appId: process.env.PUSHER_APP_ID!,
       key: process.env.NEXT_PUBLIC_PUSHER_APP_KEY!,
       secret: process.env.PUSHER_SECRET!,
