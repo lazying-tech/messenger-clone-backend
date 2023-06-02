@@ -258,9 +258,9 @@ export class ConversationsService {
           where: { id: id, userIds: { hasSome: [user.id] } },
         });
 
-      existingConversation.users.forEach((user) => {
+      existingConversation.users.forEach(async (user) => {
         if (user.email) {
-          this.pusherService.trigger(
+          await this.pusherService.trigger(
             user.email,
             'conversation:remove',
             existingConversation,
