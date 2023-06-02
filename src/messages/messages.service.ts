@@ -79,8 +79,8 @@ export class MessagesService {
       const lastMessage =
         updatedConversation.messages[updatedConversation.messages.length - 1];
 
-      updatedConversation.users.map((user) => {
-        this.pusherService.trigger(user.email!, 'conversation:update', {
+      updatedConversation.users.map(async (user) => {
+        await this.pusherService.trigger(user.email!, 'conversation:update', {
           id: conversationId,
           messages: [lastMessage],
         });

@@ -47,9 +47,9 @@ export class ConversationsService {
           },
         });
 
-        newConversation.users.map((user) => {
+        newConversation.users.map(async (user) => {
           if (user.email) {
-            this.pusherService.trigger(
+            await this.pusherService.trigger(
               user.email,
               'conversation:new',
               newConversation,
@@ -105,9 +105,9 @@ export class ConversationsService {
         },
       });
 
-      newConversation.users.map((user) => {
+      newConversation.users.map(async (user) => {
         if (user.email) {
-          this.pusherService.trigger(
+          await this.pusherService.trigger(
             user.email,
             'conversation:new',
             newConversation,
@@ -192,7 +192,7 @@ export class ConversationsService {
         messages: [updatedMessage],
       });
 
-      // if we has seen last message ->
+      // if we has seen last message -> just leave it there
       if (lastMessage.seenIds.indexOf(user.id) !== -1) {
         return MSG('DONE!', conversation, null, HttpStatus.OK);
       }
